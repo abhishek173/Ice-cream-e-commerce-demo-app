@@ -1,0 +1,41 @@
+python --version
+
+pip freeze
+
+django-admin startproject <mysite>
+
+python manage.py runserver <portNO>
+
+# to create an app
+python manage.py startapp <app_name>
+
+
+# to detect change in databae schema
+python manage.py makemigrations
+
+makemigrations - means "create changes" and store in a file 
+
+# default django table is created for authentication 
+python manage.py migrate
+
+migrate - means "applying the pending changes created by makemigrations"
+
+# to create a superuser
+python manage.py createsuperuser
+
+# to create a table 
+1) Register your model in admin.py of app
+2) Register your app in settings.py
+   - copy your app name from apps.py and paste inside installed_apps under settings.py
+3) then run migration command
+
+
+#filtering objects from models name Contact
+Contact.objects.all()
+Contact.objects.filter(name="Abhishek")
+Contact.objects.filter(name="Abhishek",phone="12312342")
+Contact.objects.first()
+Contact.objects.last()
+ins = Contact.objects.all()[0]  => first instance
+Contact.object.all()[0].name  => first object name
+
